@@ -1,24 +1,48 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
 
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { AlertComponent } from './alert/alert.component';
 import { LandingComponent } from './landing/landing.component';
 import { RegisterComponent } from './register/register.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './login/login.component';
+import { FooterComponent } from './footer/footer.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { ShoppingListEditComponent } from './shopping-list-edit/shopping-list-edit.component';
+import { RecipeBookComponent } from './recipe-book/recipe-book.component';
+import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     AlertComponent,
-    RegisterComponent
+    RegisterComponent,
+    HeaderComponent,
+    LoginComponent,
+    FooterComponent,
+    ShoppingListComponent,
+    ShoppingListEditComponent,
+    RecipeBookComponent,
+    RecipeDetailsComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatInputModule,
     AppRoutingModule,
-    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

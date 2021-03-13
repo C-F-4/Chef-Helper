@@ -1,1 +1,14 @@
-<p>register works!</p>
+<form class="form-register">
+  <mat-form-field class="field-username">
+    <mat-label>Username</mat-label>
+    <input matInput placeholder="John" [(ngModel)]="username" [ngModelOptions]="{standalone: true}"
+      (input)="onUpdateUsername($event)">
+    <div [ngClass]="isUsernameAvailable ? 'input-info' : 'input-warn'" *ngIf="isFormTouched">
+      {{ (isUsernameAvailable) ? 'is' : 'is not' }} available.
+    </div>
+  </mat-form-field>
+  <button mat-flat-button color="accent" id="register" [disabled]="!isRegistrationEnabled || !isFormValid"
+    (click)="onRegister()">
+    Register
+  </button>
+</form>
