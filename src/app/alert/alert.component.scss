@@ -1,0 +1,18 @@
+.alert-wrapper {
+  .alert {
+    border:  20px;
+    border: 2.5px solid;
+    min-width: 300px;
+    text-align: center;
+  }
+
+  .alert-error {
+    background: rgb(247, 154, 154);
+    border-color: red;
+  }
+
+  .alert-success {
+    background-color: greenyellow;
+    border-color: green;
+  }
+}
