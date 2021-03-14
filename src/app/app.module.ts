@@ -24,6 +24,8 @@ import { RecipeDetailsComponent } from './recipe-details/recipe-details.componen
 import { RecipeItemComponent } from './recipe-item/recipe-item.component';
 import { ShoppingListItemComponent } from './shopping-list-item/shopping-list-item.component';
 
+import { HighlightColorDirective } from './directives/app-highlight-color.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,8 @@ import { ShoppingListItemComponent } from './shopping-list-item/shopping-list-it
     RecipeBookComponent,
     RecipeDetailsComponent,
     RecipeItemComponent,
-    ShoppingListItemComponent
+    ShoppingListItemComponent,
+    HighlightColorDirective
   ],
   imports: [
     BrowserModule,
