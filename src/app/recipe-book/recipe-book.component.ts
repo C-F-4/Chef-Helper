@@ -12,6 +12,7 @@ export class RecipeBookComponent implements OnInit {
 
   viewMode: ViewMode;
   recipes: IRecipe[];
+  selectedRecipe: IRecipe = {};
 
   constructor() {
     this.viewMode = ViewMode.ListView;
@@ -27,6 +28,10 @@ export class RecipeBookComponent implements OnInit {
       new Recipe('Test Recipe', 'This is a sample recipe', new URL('https://picsum.photos/100/100.jpg')),
       new Recipe('Test Recipe II', 'This is a sample II recipe', new URL('https://picsum.photos/100/100.jpg'))
     ];
+  }
+
+  onRecipeChange(recipe: IRecipe): void {
+    this.selectedRecipe = recipe;
   }
 
 }
