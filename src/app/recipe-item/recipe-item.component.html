@@ -1,1 +1,9 @@
-<p>recipe-item works!</p>
+<div class="border media position-relative p-4">
+  <img class="mr-2" [src]="recipe.iconSrc" alt="Card image cap">
+  <div class="media-body p-2">
+    <h3 class="m-0">{{ recipe.name }}</h3>
+    <small class="text-muted">Last updated 3 mins ago</small>
+    <p class="mt-2">{{ recipe.description }}</p>
+    <a href="#" class="stretched-link"></a>
+  </div>
+</div>

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IIngredient } from './../interfaces';
+import { Ingredient } from './../models';
 
 @Component({
   selector: 'app-shopping-list-edit',
@@ -6,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shopping-list-edit.component.scss']
 })
 export class ShoppingListEditComponent implements OnInit {
+  @Input() ingredient: IIngredient = {};
 
-  constructor() { }
+  constructor() {
+    this.ingredient = new Ingredient('', 1);
+  }
 
   ngOnInit(): void {
   }
