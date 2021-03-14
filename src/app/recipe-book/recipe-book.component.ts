@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ViewMode } from './../enums/view-mode.enum';
+import { ViewMode } from './../enums';
+import { IRecipe } from './../interfaces';
+import { Recipe } from './../models';
 
 @Component({
   selector: 'app-recipe-book',
@@ -9,12 +11,22 @@ import { ViewMode } from './../enums/view-mode.enum';
 export class RecipeBookComponent implements OnInit {
 
   viewMode: ViewMode;
+  recipes: IRecipe[];
 
   constructor() {
     this.viewMode = ViewMode.ListView;
+    this.recipes = [];
   }
 
   ngOnInit(): void {
+    this.fillData();
+  }
+
+  fillData(): void {
+    this.recipes = [
+      new Recipe('Test Recipe', 'This is a sample recipe', new URL('https://picsum.photos/300/180.jpg')),
+      new Recipe('Test Recipe II', 'This is a sample II recipe', new URL('https://picsum.photos/300/180.jpg'))
+    ];
   }
 
 }

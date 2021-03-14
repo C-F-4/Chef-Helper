@@ -3,7 +3,18 @@
   <ng-container *ngIf="viewMode === 0">
     <div class="row">
       <div class="col-md-5">
-        <app-recipe-item></app-recipe-item>
+        <ng-container *ngFor="let recipe of recipes">
+          <div class="border media position-relative p-4">
+            <img class="mr-2" [src]="recipe.headerImg" alt="Card image cap">
+            <div class="media-body p-2">
+              <h3 class="m-0">{{ recipe.name }}</h3>
+              <small class="text-muted">Last updated 3 mins ago</small>
+              <p class="mt-2">{{ recipe.description }}</p>
+              <a href="#" class="btn btn-outline-primary btn-block stretched-link">View Recipe</a>
+            </div>
+          </div>
+          <app-recipe-item></app-recipe-item>
+        </ng-container>
       </div>
       <div class="col-md-7">
         <app-recipe-details></app-recipe-details>
