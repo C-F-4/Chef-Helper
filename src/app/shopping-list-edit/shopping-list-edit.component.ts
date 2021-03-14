@@ -10,9 +10,7 @@ import { Ingredient } from './../models';
 export class ShoppingListEditComponent implements OnInit {
   @Input() ingredient: IIngredient = {};
 
-  constructor() {
-    this.ingredient = new Ingredient('', 1);
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }

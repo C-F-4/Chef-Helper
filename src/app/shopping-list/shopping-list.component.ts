@@ -12,6 +12,7 @@ export class ShoppingListComponent implements OnInit {
 
   public viewMode: ViewMode;
   public ingredients: IIngredient[];
+  public selectedIngredient: IIngredient = {};
 
   constructor() {
     this.viewMode = ViewMode.ListView;
@@ -27,6 +28,10 @@ export class ShoppingListComponent implements OnInit {
       new Ingredient('Item 0', 1),
       new Ingredient('Item 1', 2),
     ];
+  }
+
+  onIngredientChanged(ingredient: IIngredient): void {
+    this.selectedIngredient = ingredient;
   }
 
 }

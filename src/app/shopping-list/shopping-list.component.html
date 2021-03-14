@@ -6,19 +6,12 @@
         <button class="btn btn-primary btn-block">Add Ingredient</button>
         <hr>
         <ng-container *ngFor="let ingredient of ingredients">
-          <div class="border media position-relative p-4">
-            <!-- <img class="mr-2" [src]="ingredient.iconSrc" alt="Card image cap"> -->
-            <div class="media-body p-2">
-              <h3 class="m-0">{{ ingredient.name }} <span class="">({{ ingredient.quantity }})</span></h3>
-              <!-- <small class="text-muted">Added on {{ new Intl.DateTimeFormat(ingredient.dateCreated) }}</small> -->
-              <small class="text-muted">Added on {{ ingredient.dateCreated }}</small>
-              <a href="#" class="stretched-link"></a>
-            </div>
-          </div>
+          <app-shopping-list-item [ingredient]="ingredient" (ingredientSelected)="onIngredientChanged($event)">
+          </app-shopping-list-item>
         </ng-container>
       </div>
       <div class="col-md-9">
-        <app-shopping-list-edit [ingredient]="ingredients[0]"></app-shopping-list-edit>
+        <app-shopping-list-edit [ingredient]="selectedIngredient"></app-shopping-list-edit>
       </div>
     </div>
   </ng-container>
