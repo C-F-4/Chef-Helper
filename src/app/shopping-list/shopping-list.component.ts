@@ -34,4 +34,18 @@ export class ShoppingListComponent implements OnInit {
     this.selectedIngredient = ingredient;
   }
 
+  ingredientAdded(ingredient: IIngredient): void {
+    this.ingredients.push(ingredient);
+  }
+
+  ingredientUpdated(ingredient: IIngredient): void {
+    const updatedIndex = this.ingredients.findIndex(el => el.id === ingredient.id);
+    this.ingredients[updatedIndex] = ingredient;
+  }
+
+  ingredientDeleted(ingredient: IIngredient): void {
+    const updatedIndex = this.ingredients.findIndex(el => el.id === ingredient.id);
+    this.ingredients.splice(updatedIndex, 1);
+  }
+
 }

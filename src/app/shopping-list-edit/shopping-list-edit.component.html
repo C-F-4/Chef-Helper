@@ -3,24 +3,24 @@
     <div class="row">
       <mat-form-field class="col-md-6 field-ingredient-name">
         <mat-label>Ingredient Name</mat-label>
-        <input matInput class="w-100" [value]="ingredient.name || ''">
+        <input matInput class="w-100" [value]="ingredient.name || ''" #ingName>
       </mat-form-field>
 
       <mat-form-field class="col-md-6 field-ingredient-quantity">
         <mat-label>Ingredient Quantity</mat-label>
-        <input matInput class="w-100" [value]="ingredient.quantity || 0">
+        <input matInput class="w-100" [value]="ingredient.quantity || 0" #ingQty>
       </mat-form-field>
     </div>
     <div class="row">
       <div class="col-md-12">
         <div class="button-group d-flex justify-content-between">
-          <button type="button" class="col-md-3 btn btn-success">
+          <button type="button" class="col-md-3 btn btn-success" (click)="onFormSubmit($event)">
             Update Ingredient <span class="trash"></span>
           </button>
-          <button type="button" class="col-md-3 btn btn-primary">
+          <button type="button" class="col-md-3 btn btn-primary" (click)="onFormReset($event)">
             Reset Ingredient <span class="trash"></span>
           </button>
-          <button type="button" class="col-md-3 btn btn-danger">
+          <button type="button" class="col-md-3 btn btn-danger" (click)="onFormDelete($event)">
             Delete Ingredient <span class="trash"></span>
           </button>
         </div>
