@@ -2,13 +2,13 @@ import { IRecipe } from './../interfaces';
 import { v4 as uuidv4 } from 'uuid';
 
 export class Recipe implements IRecipe {
-  id: string;
-  dateCreated: Date;
-  dateModified: Date;
-  name: string;
-  description: string;
-  iconSrc: URL;
-  headerSrc: URL;
+  public id: string;
+  public dateCreated: Date;
+  public dateModified: Date;
+  public name: string;
+  public description: string;
+  public iconSrc: URL;
+  public headerSrc: URL;
 
   constructor(
     name: string,
