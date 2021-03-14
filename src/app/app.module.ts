@@ -25,6 +25,7 @@ import { RecipeItemComponent } from './recipe-item/recipe-item.component';
 import { ShoppingListItemComponent } from './shopping-list-item/shopping-list-item.component';
 
 import { HighlightColorDirective } from './directives/app-highlight-color.directive';
+import { DropdownDirective } from './directives/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { HighlightColorDirective } from './directives/app-highlight-color.direct
     RecipeDetailsComponent,
     RecipeItemComponent,
     ShoppingListItemComponent,
-    HighlightColorDirective
+    HighlightColorDirective,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,

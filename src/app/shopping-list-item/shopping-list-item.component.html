@@ -3,7 +3,7 @@
   <div class="media-body p-2">
     <h3 class="m-0">{{ ingredient.name }} <span class="">({{ ingredient.quantity }})</span></h3>
     <!-- <small class="text-muted">Added on {{ new Intl.DateTimeFormat(ingredient.dateCreated) }}</small> -->
-    <small class="text-muted">Added on {{ ingredient.dateCreated }}</small>
+    <small class="text-muted">Added {{ ingredient.dateCreated }}</small>
     <a href="#" class="stretched-link" (click)="onIngredientSelected()"></a>
   </div>
 </div>

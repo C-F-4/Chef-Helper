@@ -1,32 +1,32 @@
 <div class="container">
   <ng-container *ngIf="recipe?.id; else noSelectedRecipe">
     <div class="row">
-      <div class="col-12"><img [src]="recipe.headerSrc" alt="" class="img-fluid"></div>
+      <div class="col-md-12"><img [src]="recipe.headerSrc" alt="" class="img-fluid"></div>
     </div>
     <div class="row">
-      <div class="col-xs-6">Recipe: {{ recipe.name }}</div>
-      <div class="col-xs-6">
-        <div class="button-group">
-          <button class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+      <div class="col-md-10">Recipe: {{ recipe.name }}</div>
+      <div class="col-md-2">
+        <div class="button-group text-right">
+          <button class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" appDropdown
             aria-expanded="false">
             Manage <span class="caret"></span>
           </button>
           <ul class="dropdown-menu">
-            <li><a href="#">Add Ingredients to List</a></li>
-            <li><a href="#">Edit Recipe</a></li>
-            <li><a href="#">Delete Recipe</a></li>
+            <li class="dropdown-item"><a href="#">Add Ingredients to List</a></li>
+            <li class="dropdown-item"><a href="#">Edit Recipe</a></li>
+            <li class="dropdown-item"><a href="#">Delete Recipe</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12">Total Time: 15 minutes</div>
+      <div class="col-md-12">Total Time: 15 minutes</div>
     </div>
     <div class="row">
-      <div class="col-xs-12">Description: <span [appHighlightColor]="'yellow'">{{ recipe.description }}</span></div>
+      <div class="col-md-12">Description: <span [appHighlightColor]="'yellow'">{{ recipe.description }}</span></div>
     </div>
     <div class="row">
-      <div class="col-xs-12">Ingredients: {{ recipe.description }}</div>
+      <div class="col-md-12">Ingredients: {{ recipe.description }}</div>
     </div>
   </ng-container>
 
