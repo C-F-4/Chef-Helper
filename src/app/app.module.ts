@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -21,7 +22,6 @@ import { ShoppingListEditComponent } from './shopping-list-edit/shopping-list-ed
 import { RecipeBookComponent } from './recipe-book/recipe-book.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import { RecipeItemComponent } from './recipe-item/recipe-item.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [

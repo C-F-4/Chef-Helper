@@ -24,8 +24,8 @@ export class RecipeBookComponent implements OnInit {
 
   fillData(): void {
     this.recipes = [
-      new Recipe('Test Recipe', 'This is a sample recipe', new URL('https://picsum.photos/300/180.jpg')),
-      new Recipe('Test Recipe II', 'This is a sample II recipe', new URL('https://picsum.photos/300/180.jpg'))
+      new Recipe('Test Recipe', 'This is a sample recipe', new URL('https://picsum.photos/100/100.jpg')),
+      new Recipe('Test Recipe II', 'This is a sample II recipe', new URL('https://picsum.photos/100/100.jpg'))
     ];
   }
 

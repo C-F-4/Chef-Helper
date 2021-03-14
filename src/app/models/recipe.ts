@@ -7,12 +7,14 @@ export class Recipe implements IRecipe {
   dateModified: Date;
   name: string;
   description: string;
-  headerImg: URL;
+  iconSrc: URL;
+  headerSrc: URL;
 
   constructor(
     name: string,
     description: string,
-    headerImg: URL
+    iconSrc: URL,
+    headerSrc?: URL
   ) {
     this.id = uuidv4();
     this.dateCreated = new Date();
@@ -20,6 +22,11 @@ export class Recipe implements IRecipe {
 
     this.name = name;
     this.description = description;
-    this.headerImg = headerImg;
+    this.iconSrc = iconSrc;
+    if (headerSrc) {
+      this.headerSrc = headerSrc;
+    } else {
+      this.headerSrc = iconSrc;
+    }
   }
 }
