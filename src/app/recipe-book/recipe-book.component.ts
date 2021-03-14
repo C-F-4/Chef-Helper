@@ -10,9 +10,9 @@ import { Recipe } from './../models';
 })
 export class RecipeBookComponent implements OnInit {
 
-  viewMode: ViewMode;
-  recipes: IRecipe[];
-  selectedRecipe: IRecipe = {};
+  public viewMode: ViewMode;
+  public recipes: IRecipe[];
+  public selectedRecipe: IRecipe = {};
 
   constructor() {
     this.viewMode = ViewMode.ListView;

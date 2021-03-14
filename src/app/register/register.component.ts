@@ -6,11 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  isRegistrationEnabled = false;
-  username: string;
-  isUsernameAvailable: boolean;
-  isFormValid: boolean;
-  isFormTouched: boolean;
+
+  public isRegistrationEnabled = false;
+  public username: string;
+  public isUsernameAvailable: boolean;
+  public isFormValid: boolean;
+  public isFormTouched: boolean;
 
   constructor() {
     // Check Server
@@ -24,7 +25,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  resetFormState() {
+  resetFormState(): void {
     this.isRegistrationEnabled = true;
     this.username = '';
     this.isUsernameAvailable = false;
@@ -32,7 +33,7 @@ export class RegisterComponent implements OnInit {
     this.isFormTouched = false;
   }
 
-  onUpdateUsername(event: Event) {
+  onUpdateUsername(event: Event): void {
     this.isFormTouched = true;
     // Check username availability
     // this.username = (<HTMLInputElement>event.target).value;
@@ -45,7 +46,7 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  onRegister() {
+  onRegister(): void {
     console.log(`Registering ${this.username}`);
     this.resetFormState();
   }

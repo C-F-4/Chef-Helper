@@ -1,8 +1,9 @@
-<app-header></app-header>
+<app-header (routeUpdate)="onRouteChange($event)"></app-header>
 
 <div class="content" role="main">
   <app-alert></app-alert>
-  <app-shopping-list></app-shopping-list>
+  <app-recipe-book *ngIf="selectedPage === 'book'"></app-recipe-book>
+  <app-shopping-list *ngIf="selectedPage === 'list'"></app-shopping-list>
 </div>
 
 <router-outlet></router-outlet>

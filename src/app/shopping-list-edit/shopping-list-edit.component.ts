@@ -8,6 +8,7 @@ import { Ingredient } from './../models';
   styleUrls: ['./shopping-list-edit.component.scss']
 })
 export class ShoppingListEditComponent implements OnInit {
+
   @Input() ingredient: IIngredient = {};
 
   constructor() { }

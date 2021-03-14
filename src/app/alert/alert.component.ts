@@ -6,8 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./alert.component.scss']
 })
 export class AlertComponent {
-  alertMessage: string;
-  isAlertSuccess = true;
+
+  public alertMessage: string;
+  public isAlertSuccess = true;
 
   constructor() {
     this.alertMessage = 'Alert';

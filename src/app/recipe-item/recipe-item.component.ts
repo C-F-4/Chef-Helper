@@ -7,6 +7,7 @@ import { IRecipe } from './../interfaces';
   styleUrls: ['./recipe-item.component.scss']
 })
 export class RecipeItemComponent implements OnInit {
+
   @Input() recipe: IRecipe = {};
   @Output() recipeSelected = new EventEmitter<IRecipe>();
 
