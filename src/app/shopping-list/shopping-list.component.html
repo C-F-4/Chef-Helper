@@ -1,1 +1,55 @@
-<p>shopping-list works!</p>
+<div class="page-container">
+  <h3>Shopping List</h3>
+  <ng-container *ngIf="viewMode === 0">
+    <div class="row">
+      <div class="col-md-3">
+        <button class="btn btn-primary btn-block">Add Ingredient</button>
+        <hr>
+        <ng-container *ngFor="let ingredient of ingredients">
+          <div class="border media position-relative p-4">
+            <!-- <img class="mr-2" [src]="ingredient.iconSrc" alt="Card image cap"> -->
+            <div class="media-body p-2">
+              <h3 class="m-0">{{ ingredient.name }} <span class="">({{ ingredient.quantity }})</span></h3>
+              <!-- <small class="text-muted">Added on {{ new Intl.DateTimeFormat(ingredient.dateCreated) }}</small> -->
+              <small class="text-muted">Added on {{ ingredient.dateCreated }}</small>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <div class="col-md-9">
+        <app-shopping-list-edit></app-shopping-list-edit>
+        <div class="container">
+          <form class="form-ingredient-edit" action="">
+            <div class="row">
+              <mat-form-field class="col-md-6 field-ingredient-name">
+                <mat-label>Ingredient Name</mat-label>
+                <input matInput class="w-100" [value]="ingredients[0].name">
+              </mat-form-field>
+
+              <mat-form-field class="col-md-6 field-ingredient-quantity">
+                <mat-label>Ingredient Quantity</mat-label>
+                <input matInput class="w-100" [value]="ingredients[0].quantity">
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="button-group d-flex justify-content-between">
+                  <button type="button" class="col-md-3 btn btn-success">
+                    Update Ingredient <span class="trash"></span>
+                  </button>
+                  <button type="button" class="col-md-3 btn btn-primary">
+                    Reset Ingredient <span class="trash"></span>
+                  </button>
+                  <button type="button" class="col-md-3 btn btn-danger">
+                    Delete Ingredient <span class="trash"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
