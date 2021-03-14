@@ -1,1 +1,13 @@
-<p>recipe-book works!</p>
+<div class="page-container">
+  <h3>Recipe Book</h3>
+  <ng-container *ngIf="viewMode === 0">
+    <div class="row">
+      <div class="col-md-5">
+        <app-recipe-item></app-recipe-item>
+      </div>
+      <div class="col-md-7">
+        <app-recipe-details></app-recipe-details>
+      </div>
+    </div>
+  </ng-container>
+</div>

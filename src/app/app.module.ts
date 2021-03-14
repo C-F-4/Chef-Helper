@@ -20,6 +20,8 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingListEditComponent } from './shopping-list-edit/shopping-list-edit.component';
 import { RecipeBookComponent } from './recipe-book/recipe-book.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
+import { RecipeItemComponent } from './recipe-item/recipe-item.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { RecipeDetailsComponent } from './recipe-details/recipe-details.componen
     ShoppingListComponent,
     ShoppingListEditComponent,
     RecipeBookComponent,
-    RecipeDetailsComponent
+    RecipeDetailsComponent,
+    RecipeItemComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { RecipeDetailsComponent } from './recipe-details/recipe-details.componen
     MatToolbarModule,
     MatInputModule,
     AppRoutingModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

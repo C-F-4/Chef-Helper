@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ViewMode } from './../enums/view-mode.enum';
 
 @Component({
   selector: 'app-recipe-book',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipeBookComponent implements OnInit {
 
-  constructor() { }
+  viewMode: ViewMode;
+
+  constructor() {
+    this.viewMode = ViewMode.ListView;
+  }
 
   ngOnInit(): void {
   }
