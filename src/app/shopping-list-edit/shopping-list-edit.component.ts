@@ -33,7 +33,8 @@ export class ShoppingListEditComponent implements OnInit {
         this.fieldIngQtyRef.nativeElement.value
       );
       this.ingredientAdded.emit(this.ingredient);
-      this.clearState();
+      // this.clearState();
+      // this.onFormReset(event);
     }
   }
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ViewMode } from './../enums';
 import { IIngredient } from './../interfaces';
 import { Ingredient } from './../models';
+import { ShoppingDataService } from '../services';
 
 @Component({
   selector: 'app-shopping-list',
@@ -14,20 +15,17 @@ export class ShoppingListComponent implements OnInit {
   public ingredients: IIngredient[];
   public selectedIngredient: IIngredient = {};
 
-  constructor() {
+  constructor(private shoppingDataService: ShoppingDataService) {
     this.viewMode = ViewMode.ListView;
     this.ingredients = [];
   }
 
   ngOnInit(): void {
-    this.fillData();
+    this.getData();
   }
 
-  fillData(): void {
-    this.ingredients = [
-      new Ingredient('Item 0', 1),
-      new Ingredient('Item 1', 2),
-    ];
+  getData(): void {
+    this.ingredients = this.shoppingDataService.ingredients;
   }
 
   onIngredientChanged(ingredient: IIngredient): void {
@@ -35,17 +33,15 @@ export class ShoppingListComponent implements OnInit {
   }
 
   ingredientAdded(ingredient: IIngredient): void {
-    this.ingredients.push(ingredient);
+    this.ingredients = this.shoppingDataService.addIngredient(ingredient);
   }
 
   ingredientUpdated(ingredient: IIngredient): void {
-    const updatedIndex = this.ingredients.findIndex(el => el.id === ingredient.id);
-    this.ingredients[updatedIndex] = ingredient;
+    this.ingredients = this.shoppingDataService.updateIngredient(ingredient);
   }
 
   ingredientDeleted(ingredient: IIngredient): void {
-    const updatedIndex = this.ingredients.findIndex(el => el.id === ingredient.id);
-    this.ingredients.splice(updatedIndex, 1);
+    this.ingredients = this.shoppingDataService.deleteIngredient(ingredient);
   }
 
 }
