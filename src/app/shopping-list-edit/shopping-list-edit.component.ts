@@ -21,9 +21,7 @@ export class ShoppingListEditComponent implements OnInit, AfterViewInit {
     this._ingredientId = _ingredientId;
     this.setIngredientWithId();
   }
-  @Output() ingredientAdded = new EventEmitter<IIngredient>();
-  @Output() ingredientUpdated = new EventEmitter<IIngredient>();
-  @Output() ingredientDeleted = new EventEmitter<IIngredient>();
+  @Output() syncIngredients = new EventEmitter<void>();
   @ViewChild('ingName') fieldIngNameRef: ElementRef;
   @ViewChild('ingQty') fieldIngQtyRef: ElementRef;
 
@@ -59,13 +57,15 @@ export class ShoppingListEditComponent implements OnInit, AfterViewInit {
       this.ingredient.name = this.fieldIngNameRef.nativeElement.value;
       this.ingredient.quantity = this.fieldIngQtyRef.nativeElement.value;
       this.ingredient.dateModified = new Date();
-      this.ingredientUpdated.emit(this.ingredient);
+      this.shoppingDataService.updateIngredient(this.ingredient);
+      this.syncIngredients.emit();
     } else {
       this.ingredient = new Ingredient(
         this.fieldIngNameRef.nativeElement.value,
         this.fieldIngQtyRef.nativeElement.value
       );
-      this.ingredientAdded.emit(this.ingredient);
+      this.shoppingDataService.addIngredient(this.ingredient);
+      this.syncIngredients.emit();
       this.newItemForm();
     }
   }
@@ -78,7 +78,8 @@ export class ShoppingListEditComponent implements OnInit, AfterViewInit {
 
   onFormDelete(event: Event): void {
     if (this.ingredient.id) {
-      this.ingredientDeleted.emit(this.ingredient);
+      this.shoppingDataService.addIngredient(this.ingredient);
+      this.syncIngredients.emit();
       this.clearState();
       this.onFormReset(event);
     } else {

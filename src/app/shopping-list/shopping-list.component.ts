@@ -28,20 +28,12 @@ export class ShoppingListComponent implements OnInit {
     this.ingredients = this.shoppingDataService.ingredients;
   }
 
+  syncIngredients(): void {
+    this.ingredients = this.shoppingDataService.ingredients;
+  }
+
   onIngredientChanged(ingredientId: string): void {
     this.selectedIngredientId = ingredientId;
-  }
-
-  ingredientAdded(ingredient: IIngredient): void {
-    this.ingredients = this.shoppingDataService.addIngredient(ingredient);
-  }
-
-  ingredientUpdated(ingredient: IIngredient): void {
-    this.ingredients = this.shoppingDataService.updateIngredient(ingredient);
-  }
-
-  ingredientDeleted(ingredient: IIngredient): void {
-    this.ingredients = this.shoppingDataService.deleteIngredient(ingredient);
   }
 
 }

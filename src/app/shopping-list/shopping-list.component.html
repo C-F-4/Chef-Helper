@@ -11,8 +11,7 @@
         </ng-container>
       </div>
       <div class="col-md-9">
-        <app-shopping-list-edit [ingredient]="selectedIngredientId" (ingredientAdded)="ingredientAdded($event)"
-          (ingredientUpdated)="ingredientUpdated($event)" (ingredientDeleted)="ingredientDeleted($event)">
+        <app-shopping-list-edit [ingredient]="selectedIngredientId" (syncIngredients)="syncIngredients()">
         </app-shopping-list-edit>
       </div>
     </div>
