@@ -8,10 +8,11 @@
       <div class="col-md-2">
         <div class="button-group text-right">
           <button class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" appDropdown
+            (toggled)="toggleClassOn($event, actionMenuRef, toggleClass)"
             aria-expanded="false">
             Manage <span class="caret"></span>
           </button>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu" #actionMenuToggle>
             <li class="dropdown-item"><a href="#">Add Ingredients to List</a></li>
             <li class="dropdown-item"><a href="#">Edit Recipe</a></li>
             <li class="dropdown-item"><a href="#">Delete Recipe</a></li>
