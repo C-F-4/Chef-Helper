@@ -10,7 +10,7 @@ import { IAlert } from './interfaces';
 export class AppComponent implements OnInit {
 
   public title = 'menubook';
-  public selectedPage = '';
+  // public selectedPage = 'book';
   public alert: IAlert = {};
 
   constructor(public notificationService: NotificationService) { }
@@ -22,8 +22,8 @@ export class AppComponent implements OnInit {
     });
   }
 
-  onRouteChange(pagePath: string): void {
-    this.selectedPage = pagePath;
-  }
+  // onRouteChange(pagePath: string): void {
+  //   this.selectedPage = pagePath;
+  // }
 
 }

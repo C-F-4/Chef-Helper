@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +27,7 @@ import { ShoppingListItemComponent } from './shopping-list-item/shopping-list-it
 
 import { HighlightColorDirective } from './directives/app-highlight-color.directive';
 import { DropdownDirective } from './directives/dropdown.directive';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { DropdownDirective } from './directives/dropdown.directive';
     RecipeItemComponent,
     ShoppingListItemComponent,
     HighlightColorDirective,
-    DropdownDirective
+    DropdownDirective,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +55,7 @@ import { DropdownDirective } from './directives/dropdown.directive';
     MatButtonModule,
     MatToolbarModule,
     MatInputModule,
+    MatIconModule,
     AppRoutingModule,
     NgbModule,
   ],

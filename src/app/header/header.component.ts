@@ -7,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  @Output() routeUpdate = new EventEmitter<string>();
+  // @Output() routeUpdate = new EventEmitter<string>();
   public title = 'menubook';
 
   constructor() { }
@@ -15,8 +15,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onRouteChange(pagePath: string): void {
-    this.routeUpdate.emit(pagePath);
-  }
+  // onRouteChange(pagePath: string): void {
+  //   this.routeUpdate.emit(pagePath);
+  // }
 
 }
