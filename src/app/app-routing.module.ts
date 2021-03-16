@@ -31,6 +31,11 @@ const routes: Routes = [
   {
     path: 'recipe-book',
     component: RecipeBookComponent
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
   }
 ];
 

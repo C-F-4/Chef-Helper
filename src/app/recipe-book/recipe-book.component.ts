@@ -24,10 +24,12 @@ export class RecipeBookComponent implements OnInit {
   }
 
   fillData(): void {
+    // To-Do
     this.recipes = [
-      new Recipe('Test Recipe', 'This is a sample recipe', new URL('https://picsum.photos/100/100.jpg')),
+      new Recipe('Test Recipe', 'This is a sample recipe', new URL('https://picsum.photos/100/100.jpg'), new URL('https://picsum.photos/800/100.jpg')),
       new Recipe('Test Recipe II', 'This is a sample II recipe', new URL('https://picsum.photos/100/100.jpg'))
     ];
+    this.selectedRecipe = this.recipes[0];
   }
 
   onRecipeChange(recipe: IRecipe): void {

@@ -125,6 +125,14 @@
               "devServerTarget": "menubook:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "https://c-f-4.github.io/Chef-Helper/",
+            "name": "Chef Helper Team",
+            "email": "abhinavsaxena67@gmail.com"
+          }
         }
       }
     }
