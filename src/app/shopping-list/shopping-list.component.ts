@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewMode } from './../enums';
 import { IIngredient } from './../interfaces';
-import { Ingredient } from './../models';
 import { ShoppingDataService } from '../services';
 
 @Component({
@@ -13,11 +12,12 @@ export class ShoppingListComponent implements OnInit {
 
   public viewMode: ViewMode;
   public ingredients: IIngredient[];
-  public selectedIngredient: IIngredient = {};
+  public selectedIngredientId: string;
 
   constructor(private shoppingDataService: ShoppingDataService) {
     this.viewMode = ViewMode.ListView;
     this.ingredients = [];
+    this.selectedIngredientId = '';
   }
 
   ngOnInit(): void {
@@ -28,8 +28,8 @@ export class ShoppingListComponent implements OnInit {
     this.ingredients = this.shoppingDataService.ingredients;
   }
 
-  onIngredientChanged(ingredient: IIngredient): void {
-    this.selectedIngredient = ingredient;
+  onIngredientChanged(ingredientId: string): void {
+    this.selectedIngredientId = ingredientId;
   }
 
   ingredientAdded(ingredient: IIngredient): void {

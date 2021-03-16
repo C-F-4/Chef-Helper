@@ -28,6 +28,14 @@ export class ShoppingDataService {
     this._ingredients = ingredients;
   }
 
+  public getIngredientById(id: string): IIngredient {
+    const ing = this.ingredients.find(el => el.id === id);
+    if (!ing) {
+      throw new Error(`Ingredient Not Found: ${id}`);
+    }
+    return ing;
+  }
+
   public addIngredient(ingredient: IIngredient): IIngredient[] {
     this._ingredients.push(ingredient);
     return this.ingredients;

@@ -3,15 +3,15 @@
   <ng-container *ngIf="viewMode === 0">
     <div class="row">
       <div class="col-md-3">
-        <button class="btn btn-primary btn-block">Add Ingredient</button>
+        <button class="btn btn-primary btn-block" (click)="onIngredientChanged('')">Add Ingredient</button>
         <hr>
         <ng-container *ngFor="let ingredient of ingredients">
-          <app-shopping-list-item [ingredient]="ingredient" (ingredientSelected)="onIngredientChanged($event)">
+          <app-shopping-list-item [ingredient]="ingredient.id || ''" (ingredientSelected)="onIngredientChanged($event)">
           </app-shopping-list-item>
         </ng-container>
       </div>
       <div class="col-md-9">
-        <app-shopping-list-edit [ingredient]="selectedIngredient" (ingredientAdded)="ingredientAdded($event)"
+        <app-shopping-list-edit [ingredient]="selectedIngredientId" (ingredientAdded)="ingredientAdded($event)"
           (ingredientUpdated)="ingredientUpdated($event)" (ingredientDeleted)="ingredientDeleted($event)">
         </app-shopping-list-edit>
       </div>
