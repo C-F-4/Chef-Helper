@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
+import { AlertType } from '../enums';
 import { IIngredient } from './../interfaces';
 import { Ingredient } from '../models';
+import { NotificationService } from '.';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,7 @@ export class ShoppingDataService {
 
   private _ingredients: IIngredient[] = [];
 
-  constructor() {
+  constructor(private notificationService: NotificationService) {
     this.initData();
   }
 
@@ -32,12 +34,15 @@ export class ShoppingDataService {
     const ing = this.ingredients.find(el => el.id === id);
     if (!ing) {
       throw new Error(`Ingredient Not Found: ${id}`);
+    } else {
+      this.notificationService.addBasicNotification(AlertType.formSuccess, 'Alert: Ingredient GET Success');
     }
     return ing;
   }
 
   public addIngredient(ingredient: IIngredient): IIngredient[] {
     this._ingredients.push(ingredient);
+    this.notificationService.addBasicNotification(AlertType.formSuccess, 'Alert: Ingredient PUT Success');
     return this.ingredients;
   }
 
@@ -47,6 +52,7 @@ export class ShoppingDataService {
     }
     const elIdx = this.ingredients.findIndex(el => el.id === ingredient.id);
     this.ingredients[elIdx] = ingredient;
+    this.notificationService.addBasicNotification(AlertType.formSuccess, 'Alert: Ingredient PUT Success');
     return this.ingredients;
   }
 
@@ -56,6 +62,7 @@ export class ShoppingDataService {
     }
     const elIdx = this.ingredients.findIndex(el => el.id === ingredient.id);
     this.ingredients.splice(elIdx, 1);
+    this.notificationService.addBasicNotification(AlertType.formSuccess, 'Alert: Ingredient DELETE Success');
     return this.ingredients;
   }
 

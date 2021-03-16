@@ -1,7 +1,7 @@
 <app-header (routeUpdate)="onRouteChange($event)"></app-header>
 
 <div class="content" role="main">
-  <app-alert></app-alert>
+  <app-alert *ngFor="let alert of notificationService.alertList" [alertId]="alert.id || ''"></app-alert>
   <app-recipe-book *ngIf="selectedPage === 'book'"></app-recipe-book>
   <app-shopping-list *ngIf="selectedPage === 'list'"></app-shopping-list>
 </div>

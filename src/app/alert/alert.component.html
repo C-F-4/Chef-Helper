@@ -1,3 +1,4 @@
-<div class="alert-wrapper">
-  <h3 class="alert" [ngClass]="isAlertSuccess ? 'alert-success' : 'alert-error'">{{ alertMessage }}</h3>
+<div class="alert-wrapper" *ngIf="alert.isActive">
+  <h3 class="alert" [ngClass]="[getAlertClass()]">{{ alert.text }}
+  </h3>
 </div>

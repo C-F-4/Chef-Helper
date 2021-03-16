@@ -78,7 +78,7 @@ export class ShoppingListEditComponent implements OnInit, AfterViewInit {
 
   onFormDelete(event: Event): void {
     if (this.ingredient.id) {
-      this.shoppingDataService.addIngredient(this.ingredient);
+      this.shoppingDataService.deleteIngredient(this.ingredient);
       this.syncIngredients.emit();
       this.clearState();
       this.onFormReset(event);
